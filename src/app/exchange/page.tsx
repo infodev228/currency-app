@@ -2,23 +2,23 @@
 import Footer from "@/components/footer";
 import { currency_list } from "../../utils/currencyCodes";
 import { useEffect, useState } from "react";
-import { SwatchIcon } from "@heroicons/react/20/solid";
-import {
-  ArrowPathIcon,
-  ArrowPathRoundedSquareIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline";
 
+interface CurrencyOption {
+  code: string;
+  name: string;
+}
 export default function Home() {
-  const [currencyOptions, setCurrencyOptions] = useState<any>([]);
-  const [amount, setAmount] = useState(1);
-  const [fromCurrency, setFromCurrency] = useState("USD");
-  const [toCurrency, setToCurrency] = useState("INR");
-  const [result, setResult] = useState("");
-  const [status, setStatus] = useState("");
+  const [currencyOptions, setCurrencyOptions] = useState<CurrencyOption[]>([]);
+  const [amount, setAmount] = useState<number>(1);
+  const [fromCurrency, setFromCurrency] = useState<string>("USD");
+  const [toCurrency, setToCurrency] = useState<string>("INR");
+  const [result, setResult] = useState<string>("");
+  const [status, setStatus] = useState<string>("");
 
   useEffect(() => {
     // Populate currency options from the list
-    const options = currency_list.map(([code, name]) => ({
+    const options: CurrencyOption[] = currency_list.map(([code, name]) => ({
       code,
       name,
     }));
@@ -40,7 +40,7 @@ export default function Home() {
       // `https://v6.exchangerate-api.com/v6/${api}/latest/USD`
       "/api/rates"
     );
-
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     const data = await response.json();
     const fromRate = data.rates[fromCurrency];
     const toRate = data.rates[toCurrency];
