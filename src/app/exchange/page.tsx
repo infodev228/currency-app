@@ -1,8 +1,9 @@
 "use client";
 import Footer from "@/components/footer";
 import { currency_list } from "../../utils/currencyCodes";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 interface CurrencyOption {
   code: string;
@@ -16,7 +17,7 @@ export default function Exchange() {
   const [fromCurrency, setFromCurrency] = useState<string>("USD");
   const [toCurrency, setToCurrency] = useState<string>("INR");
   const [result, setResult] = useState<string>("");
-  const [status, setStatus] = useState<any>("");
+  const [status, setStatus] = useState<JSX.Element | string>("");
 
   // useEffect(() => {
   //   // Populate currency options from the list
@@ -56,19 +57,23 @@ export default function Exchange() {
     //     );
     setStatus(
       <>
-        <img
+        <Image
           src={`https://flagsapi.com/${fromCurrency.substring(
             0,
             2
           )}/flat/64.png`}
           alt={`${fromCurrency} flag`}
           className="inline-block h-6 w-6 mr-2"
+          width={24}
+          height={24}
         />
         1 = {(toRate / fromRate).toFixed(2)}
-        <img
+        <Image
           src={`https://flagsapi.com/${toCurrency.substring(0, 2)}/flat/64.png`}
           alt={`${toCurrency} flag`}
           className="inline-block h-6 w-6 ml-2"
+          width={24}
+          height={24}
         />
       </>
     );
