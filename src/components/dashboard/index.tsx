@@ -59,6 +59,11 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
     <>
       <div className="flex h-screen">
         <div className="p-4">
+          <p className="text-red-900 mb-2">
+            <b>Notes:</b> JSON formate should be the same as{" "}
+            <strong>https://api.exchangerate-api.com/v4/latest/USD </strong>{" "}
+            copy & past from
+          </p>
           {message && (
             <p
               className={
