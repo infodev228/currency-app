@@ -77,7 +77,7 @@ export default function Exchange() {
         <input
           type="number"
           className="block min-w-0 w-full border rounded border-black py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm"
-          placeholder="$"
+          placeholder="Amount"
           value={amount}
           onChange={(e: any) => setAmount(e.target.value)}
         />
