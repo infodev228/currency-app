@@ -24,8 +24,9 @@ const Login = () => {
         <form action="" onSubmit={handleSubmit}>
           <input
             type="password"
-            className="w-full h-10 rounded"
+            className="w-full h-10 rounded p-3"
             value={password}
+            placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className="w-full p-3 mt-3 bg-slate-600 rounded text-white">

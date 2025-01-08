@@ -1,29 +1,32 @@
 "use client";
 import Footer from "@/components/footer";
 import { currency_list } from "../../utils/currencyCodes";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline";
 
 interface CurrencyOption {
   code: string;
   name: string;
 }
-export default function Home() {
-  const [currencyOptions, setCurrencyOptions] = useState<CurrencyOption[]>([]);
+export default function Exchange() {
+  const [currencyOptions] = useState<CurrencyOption[]>(
+    currency_list.map(([code, name]) => ({ code, name }))
+  );
   const [amount, setAmount] = useState<number>(1);
   const [fromCurrency, setFromCurrency] = useState<string>("USD");
   const [toCurrency, setToCurrency] = useState<string>("INR");
   const [result, setResult] = useState<string>("");
-  const [status, setStatus] = useState<string>("");
+  const [status, setStatus] = useState<any>("");
 
-  useEffect(() => {
-    // Populate currency options from the list
-    const options: CurrencyOption[] = currency_list.map(([code, name]) => ({
-      code,
-      name,
-    }));
-    setCurrencyOptions(options);
-  }, []);
+  // useEffect(() => {
+  //   // Populate currency options from the list
+  //   const options: CurrencyOption[] = currency_list.map(([code, name]) => ({
+  //     code,
+  //     name,
+  //   }));
+  //   setCurrencyOptions(options);
+  //   setIsLoading(false);
+  // }, []);
 
   const swapCurrencies = () => {
     const temp = fromCurrency;
@@ -48,8 +51,26 @@ export default function Home() {
     const convertedAmount = (amount * (toRate / fromRate)).toFixed(2);
 
     setResult(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+    //     setStatus(
+    //  1 ${fromCurrency} = ${(toRate / fromRate).toFixed(2)} ${toCurrency}`
+    //     );
     setStatus(
-      `1 ${fromCurrency} = ${(toRate / fromRate).toFixed(2)} ${toCurrency}`
+      <>
+        <img
+          src={`https://flagsapi.com/${fromCurrency.substring(
+            0,
+            2
+          )}/flat/64.png`}
+          alt={`${fromCurrency} flag`}
+          className="inline-block h-6 w-6 mr-2"
+        />
+        1 = {(toRate / fromRate).toFixed(2)}
+        <img
+          src={`https://flagsapi.com/${toCurrency.substring(0, 2)}/flat/64.png`}
+          alt={`${toCurrency} flag`}
+          className="inline-block h-6 w-6 ml-2"
+        />
+      </>
     );
     // Fetch conversion for AUD to INR
     // const audInrRate =

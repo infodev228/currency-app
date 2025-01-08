@@ -29,7 +29,7 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setCurrencyData(JSON.stringify(e.target.value, null, 2));
+    setCurrencyData(e.target.value);
     setMessage(null);
   };
 
