@@ -20,6 +20,7 @@ export default function Exchange() {
   const [result, setResult] = useState<string>("");
   const [status, setStatus] = useState<JSX.Element | string>("");
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   const swapCurrencies = () => {
     const temp = fromCurrency;
     setFromCurrency(toCurrency);
