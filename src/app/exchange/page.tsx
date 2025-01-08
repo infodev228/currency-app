@@ -75,6 +75,9 @@ export default function Exchange() {
           width={24}
           height={24}
         />
+        <div className="mt-2">
+          1 {toCurrency} = {(fromRate / toRate).toFixed(4)} {fromCurrency}
+        </div>
       </>
     );
     // Fetch conversion for AUD to INR
@@ -131,6 +134,21 @@ export default function Exchange() {
             {status}
           </p>
         </div>
+        {/* <div className="flex items-center flex-col sm:flex-row w-full">
+          <button
+            className="w-full bg-cyan-900 rounded text-white h-12 font-semibold font-mono"
+            onClick={handleConversion}
+          >
+            Convert
+          </button>
+        </div> */}
+        {result && (
+          <div className="flex items-center flex-col sm:flex-row w-full mb-1">
+            <p className="bg-slate-500 w-full h-12 p-2 text-center text-white flex items-center justify-center rounded font-semibold font-mono ">
+              {result}
+            </p>
+          </div>
+        )}
         <div className="flex items-center flex-col sm:flex-row w-full">
           <button
             className="w-full bg-cyan-900 rounded text-white h-12 font-semibold font-mono"
@@ -139,13 +157,6 @@ export default function Exchange() {
             Convert
           </button>
         </div>
-        {result && (
-          <div className="flex items-center flex-col sm:flex-row w-full mb-1">
-            <p className="bg-slate-500 w-full h-12 p-2 text-center text-white flex items-center justify-center rounded font-semibold font-mono ">
-              {result}
-            </p>
-          </div>
-        )}
       </main>
       <Footer />
     </div>
