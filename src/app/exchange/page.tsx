@@ -53,6 +53,13 @@ export default function Exchange() {
           height={24}
         />
         1 {fromCurrency} = {(toRate / fromRate).toFixed(2)} {toCurrency}
+        <Image
+          src={`https://flagsapi.com/${toCurrency.substring(0, 2)}/flat/64.png`}
+          alt={`${toCurrency} flag`}
+          className="inline-block h-6 w-6 ml-2"
+          width={24}
+          height={24}
+        />
         <div className="mt-2">
           1 {toCurrency} = {(fromRate / toRate).toFixed(4)} {fromCurrency}
         </div>
@@ -120,7 +127,8 @@ export default function Exchange() {
         )}
         <div className="flex items-center flex-col sm:flex-row w-full">
           <button
-            className="w-full bg-cyan-900 rounded text-white h-12 font-semibold font-mono"
+            type="button"
+            className="w-full bg-cyan-900 rounded text-white h-12 font-semibold font-mono transform transition duration-300 ease-in-out hover:bg-cyan-700 hover:scale-105"
             onClick={handleConversion}
           >
             Convert
