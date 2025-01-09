@@ -45,13 +45,13 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="#"
+            href="/about"
             className="text-sm/6 font-semibold text-gray-900 uppercase"
           >
             About us
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="text-sm/6 font-semibold text-gray-900 uppercase"
           >
             Contact
@@ -96,13 +96,13 @@ export default function Header() {
                   Home
                 </Link>
                 <Link
-                  href="#"
+                  href="/about"
                   className="-mx-3 uppercase block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   About Us
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="-mx-3 block uppercase rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Contact

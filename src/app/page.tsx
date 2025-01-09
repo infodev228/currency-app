@@ -142,7 +142,6 @@ export default function Exchange() {
             </button>
           </div>
         </main>
-        <Footer />
       </div>
 
       {/* Right Sidebar */}

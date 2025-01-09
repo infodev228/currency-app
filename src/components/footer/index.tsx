@@ -6,7 +6,7 @@ const Footer = () => {
       &copy; {new Date().getFullYear()} dollar to inr. All rights reserved.
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="#"
+        href="/privacy-policy"
         target="_blank"
         rel="noopener noreferrer"
       >
