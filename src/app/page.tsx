@@ -68,7 +68,7 @@ export default function Exchange() {
   };
 
   return (
-    <div className=" flex flex-col sm:flex-row">
+    <div className="h-screen flex flex-col sm:flex-row">
       {/* Left Sidebar */}
       {/* <div className="w-full sm:w-64 bg-gray-800 text-white p-5 sm:block hidden">
         <h2 className="text-xl font-semibold mb-5">Currency Converter</h2>
