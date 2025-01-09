@@ -82,34 +82,6 @@ export default function PrivacyPolicy() {
                   do not collect any personal data from you.
                 </p>
               </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-gray-800">
-                  Changes to This Privacy Policy
-                </h2>
-                <p className="text-gray-600">
-                  We may update our Privacy Policy from time to time. Any
-                  changes will be posted on this page, and the updated date will
-                  be reflected at the top of this policy.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-gray-800">
-                  Contact Us
-                </h2>
-                <p className="text-gray-600">
-                  If you have any questions about this Privacy Policy, please
-                  feel free to contact us at{" "}
-                  <a
-                    href="mailto:contact@dollartoinr.in"
-                    className="text-blue-600 hover:text-blue-800"
-                  >
-                    contact@dollartoinr.in
-                  </a>
-                  .
-                </p>
-              </section>
             </div>
           </div>
         </div>
