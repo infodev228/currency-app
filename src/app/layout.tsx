@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../../app/globals.css";
+import "./globals.css";
 import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Real time currency converter",
 };
 
-export default function ExchangeLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

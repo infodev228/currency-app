@@ -15,7 +15,7 @@ export default function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <Link href="/exchange" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Dollar to INR</span>
             {/* <img
               alt=""
@@ -39,7 +39,7 @@ export default function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Link
-            href="/exchange"
+            href="/"
             className="text-sm/6 font-semibold text-gray-900 uppercase"
           >
             Home
@@ -57,11 +57,11 @@ export default function Header() {
             Contact
           </Link>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link href="/login" className="text-sm/6 font-semibold text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>
-        </div>
+        </div> */}
       </nav>
       <Dialog
         open={mobileMenuOpen}
@@ -71,7 +71,7 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/exchange" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Dollar to INR</span>
               <strong className="text-slate-900 font-extrabold uppercase">
                 Dollar to INR
@@ -90,7 +90,7 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
-                  href="/exchange"
+                  href="/"
                   className="-mx-3 block uppercase rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Home
@@ -108,14 +108,14 @@ export default function Header() {
                   Contact
                 </Link>
               </div>
-              <div className="py-6">
+              {/* <div className="py-6">
                 <Link
                   href="/login"
                   className="-mx-3 uppercase block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log in
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </DialogPanel>
