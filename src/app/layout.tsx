@@ -26,6 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content={metadata.description ?? ""} />
+        <meta
+          name="keywords"
+          content="currency, conversion, rates, forex,dollar to inr"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
