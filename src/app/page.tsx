@@ -1,5 +1,5 @@
 "use client";
-import Footer from "@/components/footer";
+
 import { currency_list } from "../utils/currencyCodes";
 import { JSX, useState } from "react";
 import { ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline";

@@ -30,10 +30,9 @@ export default function PrivacyPolicy() {
                   Introduction
                 </h2>
                 <p className="text-gray-600">
-                  Dollar to INR ("we", "our", "us") is committed to respecting
-                  your privacy. This Privacy Policy explains how we collect,
-                  use, and protect your personal information when you use our
-                  currency converter app.
+                  Dollar to INR is committed to respecting your privacy. This
+                  Privacy Policy explains how we collect, use, and protect your
+                  personal information when you use our currency converter app.
                 </p>
               </section>
 

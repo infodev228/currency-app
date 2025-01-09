@@ -45,9 +45,9 @@ export default function About() {
                 <p className="text-gray-600">
                   We aim to make currency conversion seamless by offering
                   real-time exchange rates, ensuring that you can make informed
-                  financial decisions. Whether you're planning a trip, sending
-                  money overseas, or just curious about the latest rates, Dollar
-                  to INR is your trusted tool.
+                  financial decisions. Whether you &apos;re planning a trip,
+                  sending money overseas, or just curious about the latest
+                  rates, Dollar to INR is your trusted tool.
                 </p>
               </section>
 
