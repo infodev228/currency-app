@@ -1,31 +1,21 @@
-// app/api/rates/cron-job.ts
-import cron from "node-cron";
-import fetch from "node-fetch";
+// app/api/cronJob/route.ts
 
-// Function to trigger the update of exchange rates
-const updateExchangeRates = async () => {
-  try {
-    const response = await fetch(
-      "www.dollartoinr.in/api/rates?action=update", // Change to your deployed URL
-      {
-        method: "POST",
-      }
-    );
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    const data: any = await response.json();
-    console.log(`[Cron Job]: ${data.message}`); // Log success or error messages
-  } catch (error) {
-    console.error("[Cron Job]: Failed to update exchange rates:", error);
-  }
+export const config = {
+  runtime: "edge", // Required for scheduled functions
 };
 
-// Trigger the update every hour
-cron.schedule("0 */6 * * *", () => {
-  console.log("[Cron Job]: Running automatic exchange rate update...");
-  updateExchangeRates();
-});
+export default async function handler(req: Request) {
+  try {
+    // Example: You can fetch and update exchange rates or perform any task here.
+    const response = await fetch(
+      "https://api.exchangerate-api.com/v4/latest/USD"
+    );
+    const data = await response.json();
+    console.log("Cron Job executed:", data);
 
-// This is required for the serverless function to work
-export async function GET() {
-  return new Response("Cron job setup is running.", { status: 200 });
+    return new Response("Cron job executed successfully.", { status: 200 });
+  } catch (error) {
+    console.error("Error executing cron job:", error);
+    return new Response("Failed to execute cron job.", { status: 500 });
+  }
 }
