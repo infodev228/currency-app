@@ -3,17 +3,6 @@ import path from "path";
 
 const filePath = path.resolve("data/exchangeRates.json");
 
-// Fetch exchange rates from API
-async function fetchExchangeRates() {
-  const response = await fetch(
-    "https://api.exchangerate-api.com/v4/latest/USD"
-  );
-  if (!response.ok) {
-    throw new Error(`Failed to fetch exchange rates: ${response.status}`);
-  }
-  return response.json();
-}
-
 export async function GET() {
   const data = await fs.readFile(filePath, "utf-8");
   return new Response(data, {
