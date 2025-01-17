@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-const filePath = path.resolve("/tmp/exchangeRates.json");
+const filePath = path.resolve("data/exchangeRates.json");
 
 export async function GET() {
   const data = await fs.readFile(filePath, "utf-8");
