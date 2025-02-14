@@ -1,7 +1,5 @@
-import "../../globals.css";
-
 export const metadata = {
-  title: "Login - Next.js",
+  title: "Login",
   description: "Login page",
   robots: {
     index: false,
@@ -15,12 +13,8 @@ export default function LoginLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <div className="login-layout">
-          <main>{children}</main>
-        </div>
-      </body>
-    </html>
+    <div className="flex items-center justify-center h-screen">
+      <main>{children}</main>
+    </div>
   );
 }

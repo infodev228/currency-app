@@ -1,4 +1,4 @@
-import Dashboard from "@/components/dashboard";
+import Dashboard from "@/components/admin/dashboard";
 import { cookies } from "next/headers";
 
 export default async function Page() {

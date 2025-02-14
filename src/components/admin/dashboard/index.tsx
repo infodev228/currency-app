@@ -17,6 +17,7 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
       const getInitialData = async () => {
         const response = await fetch("/api/rates");
         const data = await response.json();
+        console.log("======", data);
         setCurrencyData(JSON.stringify(data, null, 2));
       };
       getInitialData();
@@ -57,7 +58,7 @@ const Dashboard: React.FC<DashboardProps> = ({ token }) => {
 
   return (
     <>
-      <div className="flex h-screen">
+      <div className="flex h-screen items-center justify-center">
         <div className="p-4">
           <p className="text-red-900 mb-2">
             <b>Notes:</b> JSON formate should be the same as{" "}

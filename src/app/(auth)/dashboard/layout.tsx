@@ -12,21 +12,16 @@ export default function DashboardLayout({
   };
 
   return (
-    <html lang="en">
-      <body>
-        <header className="m-2 p-4 flex">
-          <button
-            className=" bg-slate-600 text-white rounded p-2 "
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
-        </header>
-        {children}
-        {/* <footer className="">
-          <p>Dashboard Footer</p>
-        </footer> */}
-      </body>
-    </html>
+    <div>
+      <header className="m-2 p-4 flex">
+        <button
+          className=" bg-slate-600 text-white rounded p-2 "
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+      </header>
+      <main> {children}</main>
+    </div>
   );
 }

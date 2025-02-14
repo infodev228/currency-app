@@ -1,6 +1,6 @@
 "use client";
 
-import { currency_list } from "../utils/currencyCodes";
+import { currency_list } from "../../utils/currencyCodes";
 import { JSX, useState } from "react";
 import { ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -33,9 +33,11 @@ export default function Exchange() {
       return;
     }
     const response = await fetch("/api/rates");
+
     const data = await response.json();
-    const fromRate = data.rates[fromCurrency];
-    const toRate = data.rates[toCurrency];
+    console.log("resposne", data?.conversion_rates);
+    const fromRate = data?.conversion_rates[fromCurrency];
+    const toRate = data.conversion_rates[toCurrency];
 
     const convertedAmount = (amount * (toRate / fromRate)).toFixed(2);
 
